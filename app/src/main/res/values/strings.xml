@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UrlImageToGridView</string>
+
+    <string name="title_section1">Android</string>
+    <string name="title_section2">Windows</string>
+    <string name="title_section3">iOS</string>
+</resources>
