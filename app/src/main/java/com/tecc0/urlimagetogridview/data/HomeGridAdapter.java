@@ -1,4 +1,4 @@
-package com.tecc0.urlimagetogridview;
+package com.tecc0.urlimagetogridview.data;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.tecc0.urlimagetogridview.R;
+
 import java.util.ArrayList;
 
 /**

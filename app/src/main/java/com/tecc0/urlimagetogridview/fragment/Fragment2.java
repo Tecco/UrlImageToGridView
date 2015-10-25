@@ -1,4 +1,4 @@
-package com.tecc0.urlimagetogridview;
+package com.tecc0.urlimagetogridview.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,26 +10,32 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.tecc0.urlimagetogridview.data.HomeGridAdapter;
+import com.tecc0.urlimagetogridview.data.ItemData;
+import com.tecc0.urlimagetogridview.JsonManager;
+import com.tecc0.urlimagetogridview.R;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 
 /**
  * Created by makotonishimoto on 2015/10/11.
  */
-public class fragment1 extends Fragment {
+public class Fragment2 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,
                              Bundle savedInstanceState){
 
-        View v = inflater.inflate(R.layout.fragment_main1, null);
+        View v = inflater.inflate(R.layout.fragment_main2, null);
 
-        InputStream inputStream = getResources().openRawResource(R.raw.android);
+        //読み込むJsonファイルの指定
+        InputStream inputStream = getResources().openRawResource(R.raw.windows);
 
         JsonManager jsonManager = new JsonManager(inputStream);
         ArrayList<ItemData> itemDataList = jsonManager.getItemDataList();
 
-        GridView gridView = (GridView)v.findViewById(R.id.gridview1);
+        GridView gridView = (GridView)v.findViewById(R.id.gridview2);
         ArrayAdapter<ItemData> adapter = new HomeGridAdapter(getContext(), R.layout.item, itemDataList);
         gridView.setAdapter(adapter);
 

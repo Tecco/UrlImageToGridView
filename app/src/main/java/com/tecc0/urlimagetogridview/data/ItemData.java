@@ -1,4 +1,4 @@
-package com.tecc0.urlimagetogridview;
+package com.tecc0.urlimagetogridview.data;
 
 /**
  * Created by makotonishimoto on 2015/10/24.

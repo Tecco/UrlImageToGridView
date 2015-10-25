@@ -1,5 +1,7 @@
 package com.tecc0.urlimagetogridview;
 
+import com.tecc0.urlimagetogridview.data.ItemData;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -35,9 +37,9 @@ public class JsonManager {
             e.printStackTrace();
         }
 
+        //TODO; GSON使ってもいいかも
         try {
-            JSONObject jObject = new JSONObject(
-                    byteArrayOutputStream.toString());
+            JSONObject jObject = new JSONObject(byteArrayOutputStream.toString());
             JSONArray jArray = jObject.getJSONArray("data");
 
             for (int i = 0; i < jArray.length(); i++) {

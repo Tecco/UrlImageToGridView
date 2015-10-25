@@ -1,4 +1,4 @@
-package com.tecc0.urlimagetogridview;
+package com.tecc0.urlimagetogridview.core;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+
+import com.tecc0.urlimagetogridview.R;
+import com.tecc0.urlimagetogridview.fragment.Fragment1;
+import com.tecc0.urlimagetogridview.fragment.Fragment2;
+import com.tecc0.urlimagetogridview.fragment.Fragment3;
 
 import java.util.Locale;
 
@@ -87,11 +92,11 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new fragment1();
+                    return new Fragment1();
                 case 1:
-                    return new fragment2();
+                    return new Fragment2();
                 case 2:
-                    return new fragment3();
+                    return new Fragment3();
             }
             return null;
         }
