@@ -24,13 +24,13 @@
             android:layout_height="wrap_content"
             android:text="title"
             android:layout_gravity="bottom|left"
-            android:textColor="#ffffff" />
+            android:textColor="@color/white" />
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff">
+        android:background="@color/white">
 
         <LinearLayout
             android:orientation="horizontal"

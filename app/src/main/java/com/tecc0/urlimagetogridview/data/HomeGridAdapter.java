@@ -64,6 +64,4 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
 
         return convertView;
     }
-
-
 }
