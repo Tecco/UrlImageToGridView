@@ -27,12 +27,52 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
         this.layoutId = layoutId;
     }
 
-    class ViewHolder {
-        TextView name;
-        ImageView imageView;
-        TextView likes;
-        TextView comments;
-        TextView price;
+    private class ViewHolder {
+        private TextView name;
+        private ImageView imageView;
+        private TextView like;
+        private TextView comment;
+        private TextView price;
+
+        public TextView getName() {
+            return name;
+        }
+
+        public void setName(TextView name) {
+            this.name = name;
+        }
+
+        public ImageView getImageView() {
+            return imageView;
+        }
+
+        public void setImageView(ImageView imageView) {
+            this.imageView = imageView;
+        }
+
+        public TextView getLike() {
+            return like;
+        }
+
+        public void setLike(TextView like) {
+            this.like = like;
+        }
+
+        public TextView getComment() {
+            return comment;
+        }
+
+        public void setComment(TextView comment) {
+            this.comment = comment;
+        }
+
+        public TextView getPrice() {
+            return price;
+        }
+
+        public void setPrice(TextView price) {
+            this.price = price;
+        }
     }
 
     @Override
@@ -42,21 +82,23 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
         if (convertView == null) {
             convertView = inflater.inflate(layoutId, parent, false);
             h = new ViewHolder();
-            h.name = (TextView) convertView.findViewById(R.id.name);
-            h.imageView = (ImageView) convertView.findViewById(R.id.imageview);
-            h.likes = (TextView) convertView.findViewById(R.id.likes);
-            h.comments = (TextView) convertView.findViewById(R.id.comments);
-            h.price = (TextView) convertView.findViewById(R.id.price);
+            h.setName((TextView) convertView.findViewById(R.id.name));
+            h.setLike((TextView) convertView.findViewById(R.id.likes));
+            h.setComment((TextView) convertView.findViewById(R.id.comments));
+            h.setPrice((TextView) convertView.findViewById(R.id.price));
+            h.setImageView((ImageView) convertView.findViewById(R.id.imageview));
             convertView.setTag(h);
         } else {
             h = (ViewHolder) convertView.getTag();
         }
 
-        h.name.setText(itemData.get(position).getName());
-        Picasso.with(getContext()).load(itemData.get(position).getPhoto()).into(h.imageView);
-        h.likes.setText(itemData.get(position).getLike());
-        h.comments.setText(itemData.get(position).getComment());
-        h.price.setText("$ " + itemData.get(position).getPrice());
+        ItemData i = getItem(position);
+
+        h.getName().setText(i.getName());
+        h.getLike().setText(i.getLike());
+        h.getComment().setText(i.getComment());
+        h.getPrice().setText(i.getPrice());
+        Picasso.with(getContext()).load(i.getPhoto()).into(h.imageView);
 
         return convertView;
     }
