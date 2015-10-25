@@ -33,46 +33,6 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
         private TextView like;
         private TextView comment;
         private TextView price;
-
-        public TextView getName() {
-            return name;
-        }
-
-        public void setName(TextView name) {
-            this.name = name;
-        }
-
-        public ImageView getImageView() {
-            return imageView;
-        }
-
-        public void setImageView(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        public TextView getLike() {
-            return like;
-        }
-
-        public void setLike(TextView like) {
-            this.like = like;
-        }
-
-        public TextView getComment() {
-            return comment;
-        }
-
-        public void setComment(TextView comment) {
-            this.comment = comment;
-        }
-
-        public TextView getPrice() {
-            return price;
-        }
-
-        public void setPrice(TextView price) {
-            this.price = price;
-        }
     }
 
     @Override
@@ -82,11 +42,11 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
         if (convertView == null) {
             convertView = inflater.inflate(layoutId, parent, false);
             h = new ViewHolder();
-            h.setName((TextView) convertView.findViewById(R.id.name));
-            h.setLike((TextView) convertView.findViewById(R.id.likes));
-            h.setComment((TextView) convertView.findViewById(R.id.comments));
-            h.setPrice((TextView) convertView.findViewById(R.id.price));
-            h.setImageView((ImageView) convertView.findViewById(R.id.imageview));
+            h.name = (TextView) convertView.findViewById(R.id.name);
+            h.like = (TextView) convertView.findViewById(R.id.likes);
+            h.comment = (TextView) convertView.findViewById(R.id.comments);
+            h.price = (TextView) convertView.findViewById(R.id.price);
+            h.imageView = (ImageView) convertView.findViewById(R.id.imageview);
             convertView.setTag(h);
         } else {
             h = (ViewHolder) convertView.getTag();
@@ -94,10 +54,10 @@ public class HomeGridAdapter extends ArrayAdapter<ItemData> {
 
         ItemData i = getItem(position);
 
-        h.getName().setText(i.getName());
-        h.getLike().setText(i.getLike());
-        h.getComment().setText(i.getComment());
-        h.getPrice().setText(i.getPrice());
+        h.name.setText(i.getName());
+        h.like.setText(i.getLike());
+        h.comment.setText(i.getComment());
+        h.price.setText(i.getPrice());
         Picasso.with(getContext()).load(i.getPhoto()).into(h.imageView);
 
         return convertView;
